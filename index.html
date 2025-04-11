@@ -8,7 +8,7 @@
   <!-- Tailwind CSS via CDN for quick testing -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Configure Tailwind: use class-based dark mode and add a custom hero background image.
+    // Configure Tailwind: use class-based dark mode and set a custom hero background image.
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -21,10 +21,8 @@
     }
   </script>
   
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-p7R2zr9A+MdStMXY4H3TvLO3OxAf/wY1pC0JAz6VhvjF+0zwIjqax9xYdP4q0K9BYcOkHYnWGf9YsX5tJv16qw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome Kit (your kit worked for you) -->
+  <script src="https://kit.fontawesome.com/9649898aa4.js" crossorigin="anonymous"></script>
   
   <style>
     /* Utility to make an entire project card clickable */
@@ -35,7 +33,7 @@
     }
     .project-card-link:hover .project-card {
       transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -57,16 +55,15 @@
         <a href="index.html#about" class="transition hover:text-blue-600">About</a>
         <a href="index.html#projects" class="transition hover:text-blue-600">Projects</a>
         <a href="index.html#skills" class="transition hover:text-blue-600">Skills</a>
-        <!-- New Certifications Link -->
         <a href="#certifications" class="transition hover:text-blue-600">Certifications</a>
-        <!-- Existing links -->
+        <a href="#experience" class="transition hover:text-blue-600">Experiences</a>
         <a href="index.html#resume" class="transition hover:text-blue-600">Resume</a>
         <a href="index.html#contact" class="transition hover:text-blue-600">Contact</a>
         <!-- Desktop Dark Mode Toggle -->
         <button id="theme-toggle" class="p-1 text-2xl focus:outline-none" aria-label="Toggle dark mode">
           <!-- Sun Icon -->
-          <svg id="icon-sun" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg id="icon-sun" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/>
             <line x1="12" y1="21" x2="12" y2="23"/>
@@ -78,8 +75,8 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
           <!-- Moon Icon (initially hidden) -->
-          <svg id="icon-moon" class="w-6 h-6 stroke-current hidden" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg id="icon-moon" class="w-6 h-6 stroke-current hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
           </svg>
         </button>
@@ -96,13 +93,14 @@
       </button>
     </div>
     
-    <!-- Mobile Navigation Menu (Fixed positioning) -->
+    <!-- Mobile Navigation Menu (Fixed positioning to overlay content) -->
     <nav id="mobile-nav"
          class="hidden fixed top-16 left-0 w-full bg-gray-100 dark:bg-gray-800 flex-col md:hidden transition-all ease-in-out z-40">
       <a href="index.html#about" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">About</a>
       <a href="index.html#projects" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Projects</a>
       <a href="index.html#skills" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Skills</a>
       <a href="#certifications" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Certifications</a>
+      <a href="#experience" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Experiences</a>
       <a href="index.html#resume" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Resume</a>
       <a href="index.html#contact" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Contact</a>
       <button id="mobile-theme-toggle" class="block w-full py-3 px-4 flex justify-center items-center focus:outline-none transition border-t border-gray-300 hover:bg-blue-600 hover:text-white" aria-label="Toggle dark mode">
@@ -143,14 +141,18 @@
       </div>
     </section>
     
-    <!-- About Section -->
+    <!-- About Section (without contact details) -->
     <section id="about" class="py-20 text-center">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl mb-5">About Me</h2>
         <p class="max-w-2xl mx-auto mb-8">
-          I'm David Carlo Fermo, a results-driven IT professional passionate about creating innovative digital solutions. With experience in web development, mobile apps, data analytics, and back-end programming, I've honed my skills through real-world projects and leadership roles. I'm dedicated to continuous learning and excited to contribute to cutting-edge projects.
+          I'm David Carlo Fermo, a results-driven IT professional passionate about creating innovative digital solutions.
+          I have extensive experience in web development, mobile apps, data analytics, and back-end programming.
+          I continuously learn and innovate to contribute to cutting-edge projects.
         </p>
-        <a href="#contact" class="inline-block px-6 py-3 bg-blue-600 text-white rounded transition hover:bg-blue-700">Learn More</a>
+        <a href="#contact" class="inline-block px-6 py-3 bg-blue-600 text-white rounded transition hover:bg-blue-700">
+          Get in Touch
+        </a>
       </div>
     </section>
     
@@ -202,6 +204,17 @@
       </div>
     </section>
     
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl mb-8">My Skillset</h2>
+        <p class="max-w-2xl mx-auto mb-8">
+          With a diverse background spanning web development, mobile design, data analytics, and back-end programming, I bring a well-rounded set of skills to every project. My expertise includes HTML5, CSS3, JavaScript, React, Kotlin, Flutter, Dart, Java, PHP, and Python—along with proficiency in database management and cloud technologies.
+        </p>
+        <a href="skills.html" class="inline-block px-6 py-3 bg-blue-600 text-white rounded transition hover:bg-blue-700">View All Skills</a>
+      </div>
+    </section>
+
     <!-- Certifications Section -->
     <section id="certifications" class="py-20 text-center">
       <div class="container mx-auto px-4">
@@ -213,7 +226,7 @@
             <h3 class="text-xl font-semibold mb-2">Google Data Analytics</h3>
             <p>Completed the Google Data Analytics Professional Certificate program via Coursera.</p>
           </div>
-          <!-- Add additional certification cards as needed -->
+          <!-- Additional certification cards as needed -->
         </div>
         <div class="mt-8">
           <a href="certifications.html" class="text-blue-600 hover:underline">View All Certifications</a>
@@ -230,29 +243,18 @@
           <!-- Experience Card 1 -->
           <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
             <h3 class="text-xl font-semibold mb-2">Software Developer at Company ABC</h3>
-            <p>Developed scalable web applications and contributed to the full development lifecycle—from ideation through deployment.</p>
+            <p>Developed scalable web applications and contributed to the full development lifecycle—from ideation to deployment.</p>
           </div>
           <!-- Experience Card 2 -->
           <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
             <h3 class="text-xl font-semibold mb-2">Data Analyst at Company XYZ</h3>
             <p>Leveraged data analytics and modeling to convert complex data sets into actionable business insights.</p>
           </div>
-          <!-- Additional experience cards can be added here -->
+          <!-- Additional experience cards as needed -->
         </div>
         <div class="mt-8">
           <a href="experience.html" class="text-blue-600 hover:underline">View All Experiences</a>
         </div>
-      </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl mb-8">My Skillset</h2>
-        <p class="max-w-2xl mx-auto mb-8">
-          With a diverse background spanning web development, mobile design, data analytics, and back-end programming, I bring a well-rounded set of skills to every project. My expertise includes HTML5, CSS3, JavaScript, React, Kotlin, Flutter, Dart, Java, PHP, and Python—along with proficiency in database management and cloud technologies.
-        </p>
-        <a href="skills.html" class="inline-block px-6 py-3 bg-blue-600 text-white rounded transition hover:bg-blue-700">View All Skills</a>
       </div>
     </section>
     
@@ -291,20 +293,37 @@
         </form>
       </div>
     </section>
+    
   </main>
   
-  <!-- Footer -->
+  <!-- Footer with Interactive Contact Icons -->
   <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center">
-    <div class="container mx-auto px-4 text-sm">
-      &copy; <span id="year"></span> DCF Dev by David Carlo Fermo. All rights reserved.
-      <div class="mt-2 space-x-2">
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin text-xl hover:text-blue-600"></i>
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
+        <!-- Phone -->
+        <a href="tel:+639473284115" class="flex items-center text-blue-600 hover:underline">
+          <i class="fa-solid fa-phone mr-2"></i>
+          +63 947-328-4115
         </a>
-        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github text-xl hover:text-blue-600"></i>
+        <!-- Email -->
+        <a href="mailto:dcfermodev24@gmail.com" class="flex items-center text-blue-600 hover:underline">
+          <i class="fa-solid fa-envelope mr-2"></i>
+          dcfermodev24@gmail.com
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/david-carlo-fermo-7525b12b8/?locale=en_US" target="_blank" class="flex items-center text-blue-600 hover:underline">
+          <i class="fa-brands fa-linkedin mr-2"></i>
+          LinkedIn
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/DeusXXIV" target="_blank" class="flex items-center text-blue-600 hover:underline">
+          <i class="fa-brands fa-github mr-2"></i>
+          GitHub
         </a>
       </div>
+      <p class="text-sm">
+        &copy; <span id="year"></span> DCF Dev by David Carlo Fermo. All rights reserved.
+      </p>
     </div>
   </footer>
   
