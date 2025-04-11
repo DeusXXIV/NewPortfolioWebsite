@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Carlo Fermo - IT Portfolio</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configure Tailwind to use class-based dark mode
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-p7R2zr9A+MdStMXY4H3TvLO3OxAf/wY1pC0JAz6VhvjF+0zwIjqax9xYdP4q0K9BYcOkHYnWGf9YsX5tJv16qw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-100 dark:bg-gray-800 shadow transition-all duration-500" aria-label="Main Navigation">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <a href="index.html" class="hover:text-blue-600">DCF Dev</a>
+      </div>
+      <!-- Desktop Navigation (visible on md and larger screens) -->
+      <nav class="hidden md:flex items-center space-x-5">
+        <a href="index.html#about" class="transition hover:text-blue-600">About</a>
+        <a href="index.html#projects" class="transition hover:text-blue-600">Projects</a>
+        <a href="index.html#skills" class="transition hover:text-blue-600">Skills</a>
+        <!-- New "Experiences" link -->
+        <a href="#experience" class="transition hover:text-blue-600">Experiences</a>
+        <a href="index.html#resume" class="transition hover:text-blue-600">Resume</a>
+        <a href="index.html#contact" class="transition hover:text-blue-600">Contact</a>
+        <!-- Desktop Dark Mode Toggle -->
+        <button id="theme-toggle" class="p-1 text-2xl focus:outline-none" aria-label="Toggle dark mode">
+          <!-- Sun Icon -->
+          <svg id="icon-sun" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon Icon (initially hidden) -->
+          <svg id="icon-moon" class="w-6 h-6 stroke-current hidden" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Navigation Toggle Button (visible on small screens) -->
+      <button id="menu-toggle" class="md:hidden text-3xl p-2 focus:outline-none" aria-label="Toggle navigation">
+        <svg id="icon-hamburger" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Navigation Menu (fixed positioning so it overlays content) -->
+    <nav id="mobile-nav"
+         class="hidden fixed top-16 left-0 w-full bg-gray-100 dark:bg-gray-800 flex-col md:hidden transition-all ease-in-out z-40">
+      <a href="index.html#about" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">About</a>
+      <a href="index.html#projects" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Projects</a>
+      <a href="index.html#skills" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Skills</a>
+      <a href="#experience" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Experiences</a>
+      <a href="index.html#resume" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Resume</a>
+      <a href="index.html#contact" class="block w-full py-3 px-4 text-center border-b border-gray-300 transition hover:bg-blue-600 hover:text-white">Contact</a>
+      <button id="mobile-theme-toggle" class="block w-full py-3 px-4 flex justify-center items-center focus:outline-none transition border-t border-gray-300 hover:bg-blue-600 hover:text-white" aria-label="Toggle dark mode">
+        <!-- Mobile Sun Icon -->
+        <svg id="icon-sun-mobile" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Mobile Moon Icon (initially hidden) -->
+        <svg id="icon-moon-mobile" class="w-6 h-6 stroke-current hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content" class="pt-20">
+    <!-- Other sections (Hero, About, etc.) go here -->
+    
+    <!-- Experiences Section -->
+    <section id="experience" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl mb-4 text-center">Experiences</h2>
+        <p class="text-center mb-8">Explore my professional journey and the roles I have excelled in.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Experience Card Example -->
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+            <h3 class="text-xl font-semibold mb-2">Software Developer at Company ABC</h3>
+            <p>Developed scalable web applications and contributed to the entire development lifecycle—from ideation to deployment.</p>
+          </div>
+          <!-- Another Experience Card Example -->
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+            <h3 class="text-xl font-semibold mb-2">Data Analyst at Company XYZ</h3>
+            <p>Leveraged data modeling and analytical skills to translate complex datasets into actionable business insights.</p>
+          </div>
+          <!-- Additional experience cards can be added here -->
+        </div>
+        <div class="mt-8 text-center">
+          <a href="experience.html" class="text-blue-600 hover:underline">View All Experiences</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- (Additional sections can follow) -->
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center">
+    <div class="container mx-auto px-4 text-sm">
+      &copy; <span id="year"></span> DCF Dev by David Carlo Fermo. All rights reserved.
+    </div>
+  </footer>
+  
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
