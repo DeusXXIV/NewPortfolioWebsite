@@ -106,50 +106,46 @@
         <p class="text-center mb-8">Showcasing websites with responsive designs, dynamic functionality, and modern development practices.</p>
         <!-- Projects Grid: 1 column on small screens, 3 columns on medium+ -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <!-- Daet Digital Memory Card -->  
-          <a href="https://daetdigitalmemory.netlify.app/" target="_blank" class="block">
-            <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
-              <!-- Image Container with Preview Modal Trigger -->
-              <div id="img-preview" class="relative w-full aspect-[16/9] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition">
-                <img src="assets/test-bg.jpg" alt="Daet Digital Memory Preview" class="absolute inset-0 w-full h-full object-cover object-top">
-              </div>
-              <!-- Card Text Content -->
-              <h3 class="text-xl font-semibold mb-2">Daet Digital Memory</h3>
-              <p>
-                A personal Tailwind project focused on creating a digital footprint for the town of Daet, Camarines Norte. 
-                This project reflects my connection to my hometown and my efforts to boost its online presence beyond social media.
+        
+        <!-- Daet Digital Memory Card -->  
+        <a href="https://daetdigitalmemory.netlify.app/" target="_blank" class="block">
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+            <!-- Image Container with Preview Modal Trigger -->
+            <div class="preview-trigger relative w-full aspect-[16/9] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="assets/test-bg.jpg">
+              <img src="assets/test-bg.jpg" alt="Daet Digital Memory Preview" class="absolute inset-0 w-full h-full object-cover rounded">
             </div>
-          </a>
-          <!-- Modal Preview (Hidden by default) -->
-          <div id="preview-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
-            <div class="max-w-4xl w-full">
-              <img src="assets/test-bg.jpg" alt="Daet Digital Memory Preview" class="w-full h-auto rounded">
-            </div>
+            <!-- Card Text Content -->
+            <h3 class="text-xl font-semibold mb-2">Daet Digital Memory</h3>
+            <p>
+              A personal Tailwind project focused on creating a digital footprint for the town of Daet, Camarines Norte. 
+              This project reflects my connection to my hometown and my efforts to boost its online presence beyond social media.
+            </p>
           </div>
-          <!-- END Daet Digital Memory Card END-->
-          <!-- Chloe Card -->
-          <a href="https://minichloe.netlify.app" target="_blank" class="block">
-            <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
-              <!-- Image Container with Preview Modal Trigger -->
-              <div id="img-preview" class="relative w-full aspect-[22/10] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition">
-                <img src="/assets/images/minichloe.png" alt="Mini Chloe Preview" class="absolute inset-0 w-full h-full object-cover object-top">
-              </div>
-              <!-- Card Text Content -->
-              <h3 class="text-xl font-semibold mb-2">Mini Chloe</h3>
-              <p>
-                A personal practice project that showcases my skills in HTML, CSS, JavaScript, and Bootstrap. The website is a sort of media tracking site like IMDB and MyAnimeList. It serves as a proof of concept for prototyping the UI and other aspects before transforming it into the original Chloe Project.
-              </p>
+        </a>
+
+        <!-- Chloe Card -->
+        <a href="https://minichloe.netlify.app" target="_blank" class="block">
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+            <!-- Image Container with Preview Modal Trigger -->
+            <div class="preview-trigger relative w-full aspect-[22/10] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="/assets/images/minichloe.png">
+              <img src="/assets/images/minichloe.png" alt="Mini Chloe Preview" class="absolute inset-0 w-full h-full object-cover object-top rounded">
             </div>
-          </a>
-                    
-          <!-- Modal Preview (Hidden by default) -->
-          <div id="preview-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
-            <div class="max-w-4xl w-full">
-              <img src="/assets/images/minichloe.png" alt="Mini Chloe Full Preview" class="w-full h-auto rounded">
-            </div>
-          </div>          
-          <!-- END Chloe Card END-->   
+            <!-- Card Text Content -->
+            <h3 class="text-xl font-semibold mb-2">Mini Chloe</h3>
+            <p>
+              A personal practice project that showcases my skills in HTML, CSS, JavaScript, and Bootstrap. The website is a sort of media tracking site like IMDB and MyAnimeList. It serves as a proof of concept for prototyping the UI and other aspects before transforming it into the original Chloe Project.
+            </p>
+          </div>
+        </a>
+
+        <!-- Single Modal Preview (Hidden by default) -->
+        <div id="preview-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+          <div class="max-w-4xl w-full">
+            <img id="modal-img" src="" alt="Project Full Preview" class="w-full h-auto rounded">
+          </div>
+        </div>
+
+
       </div>
     </section>
   </main>

@@ -79,24 +79,28 @@ document.addEventListener("DOMContentLoaded", function() {
       mobileNav.classList.add("hidden");
     }
   });
-  
-   // Preview Modal Functionality for the image in the Chloe card
-   const imgPreview = document.getElementById('img-preview');
-   const previewModal = document.getElementById('preview-modal');
- 
-   if (imgPreview && previewModal) {
-     // When the image is clicked, prevent the card link from firing and show the modal preview.
-     imgPreview.addEventListener('click', function(e) {
-       e.stopPropagation(); // Stop event from propagating to the parent anchor.
-       e.preventDefault();  // Prevent the anchor from being followed.
-       previewModal.classList.remove('hidden');
-     });
- 
-     // Close the modal when clicking on the backdrop (outside the preview image).
-     previewModal.addEventListener('click', function(e) {
-       if (e.target === previewModal) {
-         previewModal.classList.add('hidden');
-       }
-     });
-   }
+
+   
+  // Preview Modal Functionality for all preview triggers:
+  const previewTriggers = document.querySelectorAll('.preview-trigger');
+  const previewModal = document.getElementById('preview-modal');
+  const modalImg = document.getElementById('modal-img');
+
+  previewTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      const imgSrc = trigger.getAttribute('data-preview-src');
+      if (imgSrc) {
+        modalImg.src = imgSrc;
+      }
+      previewModal.classList.remove('hidden');
+    });
+  });
+
+  previewModal.addEventListener('click', function(e) {
+    if (e.target === previewModal) {
+      previewModal.classList.add('hidden');
+    }
+  });
 });
