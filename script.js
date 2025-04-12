@@ -1,7 +1,7 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function() {
-  // Group dark mode icon elements for desktop and mobile
+  // -----------------------------
+  // Dark Mode Toggling
+  // -----------------------------
   const icons = {
     desktop: {
       sun: document.getElementById("icon-sun"),
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const themeToggle = document.getElementById("theme-toggle");
   const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
 
-  // Helper function to update icon visibility
   function updateIconVisibility(isDark, iconSet) {
     if (iconSet) {
       iconSet.sun.classList.toggle("hidden", isDark);
@@ -26,18 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function setTheme(theme) {
     const isDark = theme === "dark";
-    // Toggle dark mode on the <html> element for Tailwind's dark: utilities
     document.documentElement.classList.toggle("dark", isDark);
     updateIconVisibility(isDark, icons.desktop);
     updateIconVisibility(isDark, icons.mobile);
     localStorage.setItem("theme", theme);
   }
 
-  // Initialize theme from localStorage (default to light)
   const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
 
-  // Attach event listeners to toggle buttons
   if (themeToggle) {
     themeToggle.addEventListener("click", function() {
       const newTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
@@ -52,13 +48,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // -----------------------------
   // Update Footer Year
+  // -----------------------------
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Hamburger Menu Toggle for Mobile Navigation using Tailwind's "hidden" class
+  // -----------------------------
+  // Mobile Navigation Toggle
+  // -----------------------------
   const menuToggle = document.getElementById("menu-toggle");
   const mobileNav = document.getElementById("mobile-nav");
 
@@ -68,17 +68,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Auto-close mobile navigation when a link is clicked
   document.querySelectorAll("#mobile-nav a").forEach(link => {
     link.addEventListener("click", function() {
       mobileNav.classList.add("hidden");
     });
   });
 
-  // Optional: Close mobile nav when window is resized above 768px
   window.addEventListener("resize", function() {
     if (window.innerWidth >= 768) {
       mobileNav.classList.add("hidden");
     }
   });
+  
+   // Preview Modal Functionality for the image in the Chloe card
+   const imgPreview = document.getElementById('img-preview');
+   const previewModal = document.getElementById('preview-modal');
+ 
+   if (imgPreview && previewModal) {
+     // When the image is clicked, prevent the card link from firing and show the modal preview.
+     imgPreview.addEventListener('click', function(e) {
+       e.stopPropagation(); // Stop event from propagating to the parent anchor.
+       e.preventDefault();  // Prevent the anchor from being followed.
+       previewModal.classList.remove('hidden');
+     });
+ 
+     // Close the modal when clicking on the backdrop (outside the preview image).
+     previewModal.addEventListener('click', function(e) {
+       if (e.target === previewModal) {
+         previewModal.classList.add('hidden');
+       }
+     });
+   }
 });
