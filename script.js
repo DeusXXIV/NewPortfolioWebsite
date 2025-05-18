@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
       mobileNav.classList.add("hidden");
     }
   });
+  
 
    
   // Preview Modal Functionality for all preview triggers:
@@ -103,4 +104,9 @@ document.addEventListener("DOMContentLoaded", function() {
       previewModal.classList.add('hidden');
     }
   });
+
+  
+
 });
+
+
