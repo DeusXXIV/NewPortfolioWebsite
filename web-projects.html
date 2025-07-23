@@ -15,9 +15,7 @@
   </script>
   
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-p7R2zr9A+MdStMXY4H3TvLO3OxAf/wY1pC0JAz6VhvjF+0zwIjqax9xYdP4q0K9BYcOkHYnWGf9YsX5tJv16qw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/9649898aa4.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-gray-100">
   <!-- HEADER -->
@@ -105,37 +103,87 @@
     <section id="web-projects" class="py-20">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl mb-4 text-center">Web Development Projects</h2>
-        <p class="text-center mb-8">Showcasing responsive designs, dynamic functionality, and modern development practices.</p>
-        <!-- Projects Grid: 1 column on small screens, 3 columns on medium+ -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Featured Web Project Card -->
-          <a href="featured-web-project.html" class="block">
-            <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
-              <h3 class="text-xl font-semibold mb-2">
-                Featured Web Project
-                <span class="ml-2 inline-block text-xs bg-blue-600 text-white px-2 rounded">Featured</span>
-              </h3>
-              <p>A robust web application emphasizing performance, scalability, and an engaging UI.</p>
-            </div>
-          </a>
-          <!-- Responsive Website Card -->
-          <a href="responsive-website.html" class="block">
-            <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
-              <h3 class="text-xl font-semibold mb-2">Responsive Website</h3>
-              <p>A fully responsive site crafted with HTML, CSS, and JavaScript.</p>
-            </div>
-          </a>
-          <!-- Dynamic Web Application Card -->
-          <a href="dynamic-web-app.html" class="block">
-            <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
-              <h3 class="text-xl font-semibold mb-2">Dynamic Web Application</h3>
-              <p>An interactive app featuring real-time updates and API integrations.</p>
-            </div>
-          </a>
-        </div>
-        <div class="mt-8 text-center">
-          <a href="index.html" class="text-blue-600 hover:underline">Back to Home</a>
-        </div>
+        <p class="text-center mb-8">Showcasing websites with responsive designs, dynamic functionality, and modern development practices.</p>
+        
+<!-- Projects Grid: 1 column on small screens, 3 columns on medium+ -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch" style="grid-auto-rows: 1fr;">
+
+  <!-- Daet Digital Memory Card -->  
+  <a href="https://daetdigitalmemory.netlify.app/" target="_blank" class="project-card-link block">
+    <div class="flex flex-col h-full p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+      <!-- Image Container with Preview Modal Trigger -->
+      <div class="preview-trigger relative w-full aspect-[16/9] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="assets/test-bg.jpg">
+        <img src="assets/test-bg.jpg" alt="Daet Digital Memory Preview" class="absolute inset-0 w-full h-full object-cover rounded">
+      </div>
+      <!-- Card Text Content -->
+      <h3 class="text-xl font-semibold mb-2">Daet Digital Memory</h3>
+      <p>
+        A personal Tailwind project focused on creating a digital footprint for the town of Daet, Camarines Norte. 
+        This project reflects my connection to my hometown and my efforts to boost its online presence beyond social media.
+      </p>
+    </div>
+  </a>
+
+  <!-- Chloe Card -->
+  <a href="https://minichloe.netlify.app" target="_blank" class="project-card-link block">
+    <div class="flex flex-col h-full p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+      <!-- Image Container with Preview Modal Trigger -->
+      <div class="preview-trigger relative w-full aspect-[22/10] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="/assets/images/minichloe.png">
+        <img src="/assets/images/minichloe.png" alt="Mini Chloe Preview" class="absolute inset-0 w-full h-full object-cover object-top rounded">
+      </div>
+      <!-- Card Text Content -->
+      <h3 class="text-xl font-semibold mb-2">Mini Chloe</h3>
+      <p>
+        A personal practice project that showcases my skills in HTML, CSS, JavaScript, and Bootstrap. The website is a sort of media tracking site like IMDB and MyAnimeList. It serves as a proof of concept for prototyping the UI and other aspects before transforming it into the original Chloe Project.
+      </p>
+    </div>
+  </a>
+
+  <!-- Sophie Anime Lyrics Card -->
+  <a href="https://sophieanimelyrics.netlify.app" target="_blank" class="project-card-link block">
+    <div class="flex flex-col h-full p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+      <!-- Image Container with Preview Modal Trigger -->
+      <div class="preview-trigger relative w-full aspect-[16/9] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="/assets/images/sophieanimelyrics.png">
+        <img src="/assets/images/sophieanimelyrics.png" alt="Mini Chloe Preview" class="absolute inset-0 w-full h-full object-cover object-top rounded">
+      </div>
+      <!-- Card Text Content -->
+      <h3 class="text-xl font-semibold mb-2">Sophie Anime Lyrics</h3>
+      <p>
+        A personal project of mine and one of my earliest website concepts. Initially a wordpress website a more than a 
+        decade ago, it is now reborn in the modern era as a personal proejct of mine. The project uses Bootstrap, and the
+        UI is still currently stock and understyled. Priority for the project currently is function and SEO, as it is planned
+        to be deployed as a full-fledged website, with a custom domain, the first of my projects to be deployed with a custom
+        domain. Monetization via ads will also be added before UI improvements. There are also some quality of life changes
+        planned after deployment.
+      </p>
+    </div>
+  </a>
+
+  <!-- QR gen/reader Card -->
+  <a href="https://createqrcodefast.netlify.app/" target="_blank" class="project-card-link block">
+    <div class="flex flex-col h-full p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+      <!-- Image Container with Preview Modal Trigger -->
+      <div class="preview-trigger relative w-full aspect-[16/9] overflow-hidden rounded mb-4 border-2 border-transparent hover:border-blue-600 transition" data-preview-src="/assets/images/sophieanimelyrics.png">
+        <img src="/assets/images/sophieanimelyrics.png" alt="Mini Chloe Preview" class="absolute inset-0 w-full h-full object-cover object-top rounded">
+      </div>
+      <!-- Card Text Content -->
+      <h3 class="text-xl font-semibold mb-2">Create QR Code Fast</h3>
+      <p>
+        A QR generator and reader built to be published online.
+      </p>
+    </div>
+  </a>
+
+  <!-- Single Modal Preview (Hidden by default) -->
+  <div id="preview-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+    <div class="max-w-4xl w-full">
+      <img id="modal-img" src="" alt="Project Full Preview" class="w-full h-auto rounded">
+    </div>
+  </div>
+</div>
+
+
+
       </div>
     </section>
   </main>
