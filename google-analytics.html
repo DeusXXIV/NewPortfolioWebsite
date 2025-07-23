@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Data Analytics Certificate – David Carlo Fermo</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/9649898aa4.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- HEADER (identical to web-projects.html) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-100 dark:bg-gray-800 shadow transition-all duration-500">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <div class="text-2xl font-bold">
+        <a href="index.html" class="hover:text-blue-600">DCF Dev</a>
+      </div>
+      <nav class="hidden md:flex space-x-5">
+        <a href="index.html#about" class="hover:text-blue-600">About</a>
+        <a href="index.html#projects" class="hover:text-blue-600">Projects</a>
+        <a href="index.html#skills" class="hover:text-blue-600">Skills</a>
+        <a href="index.html#certifications" class="hover:text-blue-600">Certifications</a>
+        <a href="index.html#experience" class="hover:text-blue-600">Experiences</a>
+        <a href="index.html#resume" class="hover:text-blue-600">Resume</a>
+        <a href="index.html#contact" class="hover:text-blue-600">Contact</a>
+        <button id="theme-toggle" class="p-1 text-2xl focus:outline-none" aria-label="Toggle dark mode">
+          <svg id="icon-sun" class="w-6 h-6 stroke-current" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="icon-moon" class="w-6 h-6 stroke-current hidden" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </nav>
+      <button id="menu-toggle" class="md:hidden p-2 focus:outline-none" aria-label="Toggle navigation">
+        <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="hidden fixed top-16 left-0 w-full bg-gray-100 dark:bg-gray-800 flex-col md:hidden z-40">
+      <a href="index.html#about" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">About</a>
+      <a href="index.html#projects" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">Projects</a>
+      <a href="index.html#skills" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">Skills</a>
+      <a href="index.html#certifications" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">Certifications</a>
+      <a href="index.html#experience" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">Experiences</a>
+      <a href="index.html#resume" class="py-3 text-center border-b hover:bg-blue-600 hover:text-white">Resume</a>
+      <a href="index.html#contact" class="py-3 text-center hover:bg-blue-600 hover:text-white">Contact</a>
+      <button id="mobile-theme-toggle" class="py-3 border-t hover:bg-blue-600 hover:text-white">Toggle Dark</button>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="pt-20">
+    <section id="google-analytics" class="py-20 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl mb-4">Google Data Analytics Certificate</h2>
+        <p class="mb-8 max-w-2xl mx-auto">
+          My journey through the Google Data Analytics Professional Certificate on Coursera, covering 8 courses from foundations to hands-on projects.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+          <!-- Course 1 -->
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Foundations: Data, Data, Everywhere</h3>
+            <p class="mb-4">An introduction to the world of data analytics.</p>
+            <a href="CERTIFICATE_URL_1" class="text-blue-600 hover:underline">View Certificate</a>
+          </div>
+          <!-- Course 2 -->
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Ask Questions to Make Data-Driven Decisions</h3>
+            <p class="mb-4">Techniques for framing business questions to guide your analysis.</p>
+            <a href="CERTIFICATE_URL_2" class="text-blue-600 hover:underline">View Certificate</a>
+          </div>
+          <!-- Add cards for courses 3–8 in the same pattern -->
+        </div>
+
+        <div class="mt-8">
+          <a href="certifications.html" class="text-blue-600 hover:underline">← Back to all Certifications</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (same as others) -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
+        <a href="tel:+639473284115" class="flex items-center hover:underline">
+          <i class="fa-solid fa-phone mr-2"></i>+63 947 328 4115
+        </a>
+        <a href="mailto:dcfermodev24@gmail.com" class="flex items-center hover:underline">
+          <i class="fa-solid fa-envelope mr-2"></i>dcfermodev24@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/david-carlo-fermo-7525b12b8/" target="_blank" class="flex items-center hover:underline">
+          <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
+        </a>
+        <a href="https://github.com/DeusXXIV" target="_blank" class="flex items-center hover:underline">
+          <i class="fa-brands fa-github mr-2"></i>GitHub
+        </a>
+      </div>
+      <p class="text-sm">&copy; <span id="year"></span> DCF Dev by David Carlo Fermo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
